@@ -25,25 +25,8 @@ export default function App() {
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-    const handleScroll = () => {
-      const container = document.querySelector('.vertical-reveal-container');
-      if (!container) return;
-      const scrollPos = window.scrollY;
-      const containerTop = container.offsetTop;
-      const containerHeight = container.offsetHeight;
-      const windowHeight = window.innerHeight;
-      
-      let progress = (scrollPos - containerTop + windowHeight/2) / (containerHeight - windowHeight/2);
-      progress = Math.max(0, Math.min(100, progress * 100));
-      
-      container.style.setProperty('--reveal-pos', (100 - progress) + '%');
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -99,7 +82,7 @@ export default function App() {
               <div className="service-card sc-1 reveal delay-1">
                 <Sparkles className="service-icon" size={32} color="#1A1A1A" />
                 <h3 className="service-title">Gülüş Tasarımı</h3>
-                <p className="service-desc">Kişiye özel estetik analiz ve detaylı dokunuşlarla özgüvenli gülüşler.</p>
+                <p className="service-desc">Kişiye özel estetik analiz and detaylı dokunuşlarla özgüvenli gülüşler.</p>
               </div>
               <div className="service-card sc-2 reveal delay-2">
                 <Stethoscope className="service-icon" size={32} color="#1A1A1A" />
@@ -133,41 +116,14 @@ export default function App() {
         <section id="before-after" className="container" style={{ padding: '8rem 5vw' }}>
           <div className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="text-massive" style={{ fontSize: '3rem' }}>Değişimin Tanığı Olun</h2>
-            <p>Hayat değiştiren mükemmel sonuçlar. Sayfayı kaydırdıkça değişimi keşfedin.</p>
+            <p>Hayat değiştiren mükemmel sonuçlar. Gerçek dokunuşlar, gerçek değişim.</p>
           </div>
           
-          {/* Dikey Karşılaştırma Bölümü */}
-          <div className="reveal delay-1 vertical-reveal-container" style={{ maxWidth: '800px', margin: '0 auto', position: 'relative', overflow: 'hidden', height: '120vh', borderRadius: '4px' }}>
-             <div className="sticky-reveal-wrapper" style={{ position: 'sticky', top: '10vh', height: '80vh', border: '1px solid #1A1A1A' }}>
-                {/* After Image (Full Color) */}
-                <img src={beforeAfterImg} alt="Sonrası" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }} />
-                
-                {/* Before Image Overlay (Grayscale / Masked) */}
-                <div className="before-mask" style={{ 
-                  position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden',
-                  background: 'white',
-                  clipPath: 'inset(0 0 var(--reveal-pos, 50%) 0)' 
-                }}>
-                   <img src={beforeAfterImg} alt="Öncesi" style={{ 
-                     width: '100%', height: '100%', objectFit: 'cover',
-                     filter: 'grayscale(1) contrast(1.2) brightness(0.8)' 
-                   }} />
-                </div>
-
-                {/* Slider Handle (Line) */}
-                <div style={{ 
-                  position: 'absolute', left: 0, right: 0, 
-                  top: 'calc(100% - var(--reveal-pos, 50%))',
-                  height: '2px', background: 'white', zIndex: 10,
-                  boxShadow: '0 0 15px rgba(0,0,0,0.5)'
-                }}>
-                   <div style={{ 
-                     position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)',
-                     background: 'white', color: 'black', padding: '4px 12px', fontSize: '0.7rem',
-                     fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px'
-                   }}>DEĞİŞİM</div>
-                </div>
-             </div>
+          <div className="reveal delay-1" style={{ 
+              maxWidth: '800px', margin: '0 auto', border: '1px solid #1A1A1A', 
+              padding: '1rem', background: 'white', boxShadow: '0 20px 40px rgba(0,0,0,0.05)'
+          }}>
+             <img src={beforeAfterImg} alt="Öncesi ve Sonrası Değişim" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </section>
 
