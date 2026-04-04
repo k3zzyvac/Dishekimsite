@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Phone, CheckCircle2, MessageCircle, Instagram, Shield, Award, Stethoscope, Sparkles, Smile, ArrowRightLeft } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { Phone, CheckCircle2, MessageCircle, Instagram, Shield, Award, Stethoscope, Sparkles, Smile } from 'lucide-react';
 
 const clinicImages = [
   "https://lh3.googleusercontent.com/p/AF1QipMy60MMTTyaA9koLbwwAy79Cy-MLDpmE6V0GDKu=s2048",
@@ -24,7 +24,27 @@ export default function App() {
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+
+    const handleScroll = () => {
+      const container = document.querySelector('.vertical-reveal-container');
+      if (!container) return;
+      const scrollPos = window.scrollY;
+      const containerTop = container.offsetTop;
+      const containerHeight = container.offsetHeight;
+      const windowHeight = window.innerHeight;
+      
+      let progress = (scrollPos - containerTop + windowHeight/2) / (containerHeight - windowHeight/2);
+      progress = Math.max(0, Math.min(100, progress * 100));
+      
+      container.style.setProperty('--reveal-pos', (100 - progress) + '%');
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const whatsappLink = "https://wa.me/905441040123";
@@ -151,21 +171,7 @@ export default function App() {
           </div>
         </section>
 
-        <script dangerouslySetInnerHTML={{ __html: `
-          window.addEventListener('scroll', () => {
-            const container = document.querySelector('.vertical-reveal-container');
-            if (!container) return;
-            const scrollPos = window.scrollY;
-            const containerTop = container.offsetTop;
-            const containerHeight = container.offsetHeight;
-            const windowHeight = window.innerHeight;
-            
-            let progress = (scrollPos - containerTop + windowHeight/2) / (containerHeight - windowHeight/2);
-            progress = Math.max(0, Math.min(100, progress * 100));
-            
-            container.style.setProperty('--reveal-pos', (100 - progress) + '%');
-          });
-        `}} />
+
 
         <section id="gallery" className="gallery-section bg-trans">
           <div className="container">
