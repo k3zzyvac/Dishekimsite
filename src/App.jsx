@@ -30,13 +30,13 @@ export default function App() {
     };
   }, []);
 
-  const whatsappLink = "https://wa.me/905441040123";
-  const phoneLink = "tel:+905441040123";
+  const whatsappLink = "https://wa.me/[Telefon Numarası]";
+  const phoneLink = "tel:[Telefon Numarası]";
 
   return (
     <>
       <header className="sticky-header">
-        <a href="#home" className="logo">DR. KÜBRA YAŞAR ORAL</a>
+        <a href="#home" className="logo">[Poliklinik Adı]</a>
         <nav className="nav-links">
           <a href="#home" className="nav-link">Anasayfa</a>
           <a href="#services" className="nav-link">Hizmetlerimiz</a>
@@ -55,14 +55,14 @@ export default function App() {
               </div>
               <h1 className="text-massive title-clamp">Malatya'nın Kalbinde Estetik Bir Gülüş</h1>
               <p style={{ fontSize: '1.2rem', marginTop: '1.5rem', maxWidth: '600px' }}>
-                Malatya Park Ofis'in prestijli ortamında, modern teknoloji ve uzman dokunuşlarla gülüşünüzü yeniden tasarlıyoruz. Detaylara adanmış kusursuz hekimlik.
+                [Polikilinik Adresi]'nin prestijli ortamında, modern teknoloji ve uzman dokunuşlarla gülüşünüzü yeniden tasarlıyoruz. Detaylara adanmış kusursuz hekimlik.
               </p>
               <div className="hero-actions">
                 <a href={whatsappLink} target="_blank" rel="noreferrer" className="btn btn-whatsapp">
                   <MessageCircle size={20} /> WhatsApp'tan Ulaşın
                 </a>
                 <a href={phoneLink} className="btn btn-outline">
-                  <Phone size={20} /> Hemen Ara: 0544 104 01 23
+                  <Phone size={20} /> Hemen Ara: [Telefon Numarası]
                 </a>
               </div>
             </div>
@@ -118,12 +118,12 @@ export default function App() {
             <h2 className="text-massive" style={{ fontSize: '3rem' }}>Değişimin Tanığı Olun</h2>
             <p>Hayat değiştiren mükemmel sonuçlar. Gerçek dokunuşlar, gerçek değişim.</p>
           </div>
-          
-          <div className="reveal delay-1" style={{ 
-              maxWidth: '800px', margin: '0 auto', border: '1px solid #1A1A1A', 
-              padding: '1rem', background: 'white', boxShadow: '0 20px 40px rgba(0,0,0,0.05)'
+
+          <div className="reveal delay-1" style={{
+            maxWidth: '800px', margin: '0 auto', border: '1px solid #1A1A1A',
+            padding: '1rem', background: 'white', boxShadow: '0 20px 40px rgba(0,0,0,0.05)'
           }}>
-             <img src={beforeAfterImg} alt="Öncesi ve Sonrası Değişim" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={beforeAfterImg} alt="Öncesi ve Sonrası Değişim" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </section>
 
@@ -145,10 +145,10 @@ export default function App() {
             <div className="reveal">
               <h2 className="text-massive" style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Klinik Mükemmeliyet</h2>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem' }}>
-                Diş Hekimi Kübra Yaşar Oral liderliğinde, "her hastamız özeldir" misyonuyla yola çıktık.
+                Diş Hekimi [Poliklinik Adı] liderliğinde, "her hastamız özeldir" misyonuyla yola çıktık.
               </p>
               <p style={{ fontSize: '1.1rem' }}>
-                Malatya Park Ofis'te son teknoloji ekipmanlar ve premium medikal ortamımızda, stres algısını ortadan kaldıran tamamen kişiye özel butik bir yaklaşımla sizleri ağırlıyoruz.
+                [Polikilinik Adresi]'nde son teknoloji ekipmanlar ve premium medikal ortamımızda, stres algısını ortadan kaldıran tamamen kişiye özel butik bir yaklaşımla sizleri ağırlıyoruz.
               </p>
             </div>
             <div className="reveal delay-2" style={{ border: '1px solid #1A1A1A', padding: '3rem' }}>
@@ -180,7 +180,7 @@ export default function App() {
                 <div className="footer-info reveal delay-1">
                   <div className="info-block">
                     <h4>Adres</h4>
-                    <p>Malatya Park Ofis, Kat: 5, No: 28<br/>Yeşilyurt / Malatya</p>
+                    <p>[Polikilinik Adresi]</p>
                   </div>
                   <div className="info-block">
                     <h4>Çalışma Saatleri</h4>
@@ -197,13 +197,13 @@ export default function App() {
                 <a href={phoneLink} className="btn" style={{ background: 'white', color: '#1A1A1A', padding: '1.5rem', fontSize: '1.1rem' }}>
                   <Phone size={24} /> Kliniki Ara
                 </a>
-                <a href="https://instagram.com/dt.kubrayasaroral" target="_blank" rel="noreferrer" className="btn btn-outline" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.3)', marginTop: '1rem' }}>
-                  <Instagram size={20} /> @dt.kubrayasaroral
+                <a href="https://instagram.com/[Instagram Kullanıcı Adı]" target="_blank" rel="noreferrer" className="btn btn-outline" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.3)', marginTop: '1rem' }}>
+                  <Instagram size={20} /> @[Instagram Kullanıcı Adı]
                 </a>
               </div>
             </div>
             <div style={{ marginTop: '6rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'space-between', fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>
-              <p>&copy; {new Date().getFullYear()} Dt. Kübra Yaşar Oral. Tüm Hakları Saklıdır.</p>
+              <p>&copy; {new Date().getFullYear()} [Poliklinik Adı]. Tüm Hakları Saklıdır.</p>
               <p>Premium Medical Editorial</p>
             </div>
           </div>
